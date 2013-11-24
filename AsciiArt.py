@@ -1,8 +1,6 @@
 '''
 ASCII Art
 Creates an ascii art image from an arbitrary image or list of images
-It also writes the files out using hex values so I can create fake 
-disk data for my class to read (for a disk simulation project).
  
 @author: Terry Griffin
 '''
@@ -95,14 +93,11 @@ class JpgToAsciiArt():
             for y in range(0,im.size[1]):
                 for x in range(0,im.size[0]):
                     lum=im.getpixel((x,y))
-                    #hx.write(toHex(GetAsciiChar(lum)))
                     ascii.write(self.GetAsciiChar(lum))
         
                 ascii.write("\n")
-                #hx.write(toHex("\n"))
                 
             ascii.close()
-            #print os.path.getsize("./images_hex/"+name+".hex")
             
     def SetOutputDirectory(self,output_dir):
         self.AsciiOutDir = output_dir
@@ -120,8 +115,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if not (args.directory or args.filename):
         parser.error('No action requested, add -directory or -filename')
-    else:
-        Ascii = JpgToAsciiArt();
+        
+        
+    Ascii = JpgToAsciiArt();
     
     if args.outpath:
         Ascii.SetOutputDirectory(args.outpath)
