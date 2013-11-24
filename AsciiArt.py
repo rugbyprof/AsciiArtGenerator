@@ -1,6 +1,8 @@
 '''
 ASCII Art
 Creates an ascii art image from an arbitrary image or list of images
+It also writes the files out using hex values so I can create fake 
+disk data for my class to read (for a disk simulation project).
  
 @author: Terry Griffin
 '''
