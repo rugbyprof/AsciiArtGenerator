@@ -110,8 +110,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert file(s) to ascii art.")
     parser.add_argument('-directory', '-d', help="Directory of images to convert")
     parser.add_argument('-filename', '-f', help="File to convert.")
-    parser.add_argument('-outpath', '-o', help="Output directory.")
-    parser.add_argument('-extension', '-e', help="Extension for converted files.")
+    parser.add_argument('-outpath', '-o', help="Output directory (optional), default = local directory.")
+    parser.add_argument('-extension', '-e', help="Extension for converted files (optional), default = '.ascii'.")
     args = parser.parse_args()
     if not (args.directory or args.filename):
         parser.error('No action requested, add -directory or -filename')
